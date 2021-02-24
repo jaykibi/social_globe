@@ -12,7 +12,7 @@ light.position.set(5,3,5);
 scene.add(light);
 
 // Earth 
-const sphere = new THREE.Mesh( 
+const earth = new THREE.Mesh( 
     new THREE.SphereGeometry( 0.5, 32, 32 ), 
     new THREE.MeshPhongMaterial({ 
         map: new THREE.ImageUtils.loadTexture('../textures/earthmap1k.jpg'),
@@ -42,7 +42,7 @@ const galaxy = new THREE.Mesh(
 );
 
 // Add each element
-scene.add( sphere );
+scene.add( earth );
 scene.add( cloudmesh );
 scene.add( galaxy );
 
@@ -51,8 +51,8 @@ camera.position.z = 1.25;
 
 function animate() {
 	requestAnimationFrame( animate );
-    // sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.0003;
+    // earth.rotation.x += 0.01;
+    // earth.rotation.y += 0.0003;
     cloudmesh.rotation.y += 0.0005;
 	renderer.render( scene, camera );
 }
